@@ -1,4 +1,5 @@
 <img src="diagrams/ThinkTank.svg" width="280" />
+
 # Metadata Serialization
 
 This document offers ways for platforms that are part of the NIH Data Commons Pilot to demonstrate Key Capability 7 (KC7), which is needed to guarantee the findability and portability of data. This document was prepared for Team Calcium. Examples and links from existing platforms will be added as they become available.
@@ -14,11 +15,13 @@ If you know of useful Metadata Serialization techniques please make a Pull Reque
 7. [Case Studies](#casestudies)
 
 <a name="portability" />
+
 ## Metadata Portability
 
-
+Not transferring all the data, just metadata.
 
 <a name="concepts" />
+
 ## Concepts
 
 ### Data 
@@ -82,6 +85,7 @@ into a platform, loader programs call the required submission APIs. The last
 stage of the Extract, Tranform, Load process.
 
 <a name="usecases" />
+
 ## Use Cases
 
 ### Export Metadata to a Serialization Format
@@ -96,21 +100,30 @@ stage of the Extract, Tranform, Load process.
 
 <img src="diagrams/exporter.svg" />
 
-<img src="diagrams/transformer.svg" />
+### Transformer Detail
+
+<img src="diagrams/transformer.svg" width="425" />
 
 
 <a name="coremetadata" />
+
 ## Core Metadata
 
 The metadata required to represent Data Objects.
 
 <a name="schema" />
+
 ## schema.org
 
+schema.org
+
 <a name="services" />
+
 ## Ontology Services
 
 Services that provide useful JSON-LD context.
 
 <a name="casestudies" />
+
 ## Case Studies
+
