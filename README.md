@@ -50,7 +50,7 @@ So, although XML can be used to represent our metadata, its verbosity means we s
 
 ## Everyone Uses JavaScript Objects
 
-So, to begin with, everyone uses XML, remember? The number of people who know HTML exceeds the population of many nations. Schema.org has been working to make the web more semantically useful by defining tags to add to HTML. But the web services quickly decoupled from the document model when they started being driven by web services.
+So, to begin with, everyone uses XML, remember? The number of people who know HTML exceeds the population of many nations. Schema.org has been working to make the web more semantically useful by defining tags to add to HTML. But the data produced by Web sites quickly decoupled from the document model when they started being driven by Web services.
 
 Although fashions change like the seasons, a general pattern has been to separate the presentation and data layers for many websites. JavaScript allowed documents to retrieve data from a server and interpret it into a document model. For that reason, more and more services and tooling were built so that they could be easily consumed by frontend JavaScript code.
 
@@ -70,7 +70,7 @@ Although JSON creaks a little because of its origins, this is presented as a cas
 
 JSON Schema is a way of defining the types that can be represented and is similar to a XML [Document Type Definition](https://en.wikipedia.org/wiki/Document_type_definition). By adding a link to the schema for an object, downstream processors can introspect on that schema before trying to go to work. If the JSON is some instance of an aliquot, the schema represents what fields are expected to be found there (and perhaps how to validate them)!
 
-That's very boring and powerful, the same way the dictionary is boring and powerful. Yes, few would sit around reading the dictionary, but if you know your way around the dictionary it makes new things more easily readable! Writing code that introspects on schemas means writing code that makes few implicit assumptions about the data, but knowing when to make your own schema is use someone else's is still hard.
+That's very boring and powerful, the same way the dictionary is boring and powerful. Yes, few would sit around reading the dictionary, but if you know your way around the dictionary it makes new things more easily readable! Writing code that introspects on schemas means writing code that makes few implicit assumptions about the data, but knowing when to make your own schema or use someone else's is still hard.
 
 When it comes to bioinformatics, the domain moves so quickly that is difficult to get parties to agree on any fixed document model. Every year a new chemistry comes out that offers a new analytic. Developers don't want to be impeded by the need to have a fully formed data model before coding. Ontologies, which scientists maintain as controlled vocabularies around rapidly changing domains, just can't adapt (or reach consensus) fast enough. For these reasons and others, it can be difficult to get folks to think about a better way.
 
@@ -82,17 +82,17 @@ Examples of JSON-LD context for bioinformatics data are here in the [prefixcommo
 
 Combining well curated controlled vocabularies with our metadata schema will allow downstream processors to further reflect on the content of our metadata. This reduces confusion and repeated curation efforts, since mapping from one schema to another requires a human in the loop.
 
-By using JSON-LD and well formed schemas, it's possible represent our metadata as JSON-LD. JSON-LD can then be serialized as [RDF](https://www.w3.org/RDF/), stored as a turtle file, and can be queried against directly using SPARQL, or indexed into a triplet store. Triplets are statements of the form `subject, predicate, object`, SPARQL provides a query interface for working with arbitrary hierarchical data.
+By using JSON-LD and well formed schemas, it's possible represent our metadata as JSON-LD. JSON-LD can then be serialized as [RDF](https://www.w3.org/RDF/), stored as a turtle file, and can be queried against directly using SPARQL, or indexed into a triplet store. Triplets are statements of the form `subject, predicate, object`, SPARQL provides a query interface for working with graphical data that isn't tied to a single language.
 
-This is the spirit behind FAIR efforts, or data findable, accessible, interoperable, and repeatable. The fully "Linked Open Data" stack allows one a great deal of creativity and enables future-proofing that would otherwise seem intractable.
+This is the spirit behind FAIR efforts, which make data from scientific results findable, accessible, interoperable, and repeatable. The fully "Linked Open Data" stack allows one a great deal of creativity and enables future-proofing that would otherwise appear very difficult.
 
 ### Using Queries to Generate Metadata Indices
 
 If our metadata are stored in such a way that we can write SPARQL against them, then translating from one schema to another is done by writing a query. For example, let's say we want to make a file oriented index from our JSON. Without SPARQL, we might write a simple parser that deserializes the entire JSON into memory, and then iterates over keys to assemble the document structure we want. We would then go key by key until we found the elements we wanted to merge into our resulting document.
 
-If we got a new metadata dump, then we would have to do the same thing again, editing code that introspected on a JSON. By representing our metadata as RDF these aspects could be written as SPARQL queries which generate the resulting index structure. This has a number of positive externalities. The first is that we can now export and import metadata without writing any code, just a query. 
+If we got a new metadata dump, then we would have to do the same thing again, editing code that introspected on a JSON. By representing our metadata as RDF these aspects could be written as SPARQL queries, which generate the resulting index structure. This has a number of positive externalities. The first is that we can now export and import metadata without writing any code, just a query. 
 
-Another notable benefit is that downstream clients can benefit from controlled vocabularies that include synonyms. For example, imagine our input data includes a well annotated field that contains a "tissue type" and that this tissue type is annotated from a controlled vocabulary that includes synonyms. When a client wants to build an application that makes data findable by the keyword "brain", but we indexed the term "cortical", the client can refer to the ontology before accessing our index, thereby combining careful curation with high performance indexers to powerful effect!
+Another notable benefit is that downstream clients can benefit from controlled vocabularies that include synonyms. For example, imagine our input data includes a well annotated field that contains a "tissue type," and that this tissue type is annotated from a controlled vocabulary that includes synonyms. When a client wants to build an application that makes data findable by the keyword "brain", but we indexed the term "cortical", the client can refer to the ontology before accessing our index, thereby combining careful curation with high performance indexers to powerful effect!
 
 * [grlc.io](http://grlc.io/) turns SPARQL queries in github repositories into HTTP APIs!
 * [NIH List of SPARQL Endpoints](https://wiki.nci.nih.gov/display/VKC/SPARQL+Endpoints+List+of+URLs)
