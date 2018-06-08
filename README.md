@@ -95,7 +95,7 @@ stage of the Extract, Tranform, Load process.
 
 ### Export Metadata to a Serialization Format
 
-<img src="diagrams/simple-exporter.svg" />
+<img src="diagrams/simple-export.svg" />
 
 When arriving at a Data Platform, a client should be able to export data in some 
 serialized format. That format may make implicit assumptions about the data model 
@@ -103,7 +103,7 @@ it is based on.
 
 ### Import Metadata from a Serialization Format
 
-<img src="diagrams/simple-importer.svg" />
+<img src="diagrams/simple-import.svg" />
 
 With some serialized metadata describing a dataset a client should be able to 
 load data into the platform using some serialized format.
