@@ -13,7 +13,7 @@ If you know of useful Metadata Serialization techniques please make a Pull Reque
 2. [Concepts](#concepts)
 3. [Use Cases](#usecases)
 4. [Core Metadata](#coremetadata)
-5. [Ontology Services](#services)
+5. [Annotation Resources](#resources)
 6. [schema.org](#schema)
 7. [Case Studies](#casestudies)
 
@@ -171,23 +171,23 @@ also be explicitly defined.
 
 ### Deduplication
 
+Checksums provide a way to perform part of the task of deduplication.
+
 ### Ownership
+
+Copyright information, liability. Contact information?
 
 ### Provenance
 
-### Data Use
+How, where, when, and why were meta/data collected?
 
-<a name="schema" />
+### Data Use/Consent
 
-## schema.org
-
-[schema.org](https://schema.org) hosts document types that can be used to provide 
-structured metadata. Annotating documents using schema.org types can make it easier 
-for the to be indexed later.
+What can data be used for? How is consent revocation handled?
 
 ### JSON-LD Context Example
 
-<a name="services" />
+<a name="resources" />
 
 ## Annotation Resources
 
@@ -197,12 +197,30 @@ that can be easily interchanged and later indexed and queried.
 A number of resources exist to make it easier to make well annotated metadata. If you would 
 like to see your service here, open a PR!
 
+### schema.org
+
+[schema.org](https://schema.org) hosts document types that can be used to provide 
+structured metadata. Annotating documents using schema.org types can make it easier 
+for the to be indexed later.
+
+### Bioschemas
+
+http://bioschemas.org/
+
+>Bioschemas aims to improve data interoperability in life sciences. It does this by encouraging people in life science to use schema.org markup, so that their websites and services contain consistently structured information. This structured information then makes it easier to discover, collate and analyse distributed data.
+
+>The main outcome of Bioschemas is a collection of specifications that provide guidelines to facilitate a more consistent adoption of schema.org markup within the life sciences. 
+
 ### Zooma
+
+https://www.ebi.ac.uk/spot/zooma/
 
 > Zooma is a tool for mapping free text annotations to ontology term based on a curated repository of annotation knowledge.
 > Where mappings are not found in the curated respository one or more ontologies can be selected from the Ontology Lookup Service to increase coverage. For example if you want to map GWAS annotations select the GWAS datasource and a common disease ontology such as EFO or DOID to maximise coverage when terms have no curated mappings. 
 
 ### biocontext
+
+https://github.com/prefixcommons/biocontext/issues/15
 
 > ... a modular set of JSON-LD contexts for mapping abbreviated names of biological objects onto URIs for use in semantic web tool chains. Here, "abbreviated name" usually means a CURIE but optionally human-friendly symbolic names (e.g. gene) can also be used as abbrevations for complete URIs...
 
