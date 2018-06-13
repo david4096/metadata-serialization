@@ -167,23 +167,43 @@ also be explicitly defined.
 
 <a name="coremetadata" />
 
-## Core Metadata Use Cases
+## Core Metadata
+
+Core metadata are metadata that are considered crucial for carrying out some 
+simple tasks, like contacting the owner of a dataset, offering deduplication 
+of data, and others.
+
+Core metadata are described by use cases, and each service implements its own 
+set of core metadata requirements defined by the use cases it supports.
+
+### Core Metadata Use Cases
 
 ### Deduplication
 
-Checksums provide a way to perform part of the task of deduplication.
+Checksums of data allow Data Providers a way to reason about how to organize 
+indexing and storage to reduce duplication. Core metadata should include at 
+least one checksum, and having an extensible model for adding checksums 
+provides some future-proofing.
 
 ### Ownership
 
-Copyright information, liability. Contact information?
+To determine the original owner of some piece of data, clear metadata describing 
+ownership should be available with datasets. This should include licensing 
+information if available.
 
-### Provenance
+### Provenance and Replication
 
-How, where, when, and why were meta/data collected?
+Metadata are expected to be indexed and replicated many times. Providing metadata 
+regarding how the data arrived where it is are important in assisting replication.
 
-### Data Use/Consent
+Data analysis metadata are required in order to regenerate the results of an 
+analysis.
 
-What can data be used for? How is consent revocation handled?
+### Data Use and Consent
+
+Structured metadata regarding the consent status of some data should be available. 
+This allows services to determine access levels, and what types of analyses some 
+data are available for.
 
 ### JSON-LD Context Example
 
