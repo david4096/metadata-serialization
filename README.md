@@ -2,7 +2,10 @@
 
 # Metadata Serialization
 
-This document offers ways for platforms that are part of the NIH Data Commons Pilot to demonstrate Key Capability 7 (KC7), which is needed to guarantee the findability and portability of data. This document was prepared for Team Calcium. Examples and links from existing platforms will be added as they become available.
+This document offers ways for platforms that are part of the NIH Data Commons Pilot to demonstrate 
+Key Capability 7 (KC7), which is needed to guarantee the findability and portability of data. This 
+document was prepared for Team Calcium. Examples and links from existing platforms will be added 
+as they become available.
 
 If you know of useful Metadata Serialization techniques please make a Pull Request!
 
@@ -18,8 +21,16 @@ If you know of useful Metadata Serialization techniques please make a Pull Reque
 
 ## Metadata Portability
 
-Not transferring all the data, just metadata. Separating the concerns of serialization, 
-indexing, and querying of metadata.
+This document is meant to provide strategies for Data Platforms, which have internal data 
+management needs, to provide a path for clear interoperability in a Commons infrastructure.
+
+A Data Commons provides a way for many services and Data Providers a way to interchange data, 
+metadata, and the results of analyses. Without clear metadata, the data it points to will 
+be difficult to index and make available for querying using clear semantics.
+
+The Use Cases in this document are structured to address problems of serializing metadata that 
+will minimize the impact on Data Platforms, while providing a clear ramp to making best use 
+of available standards.
 
 <a name="concepts" />
 
@@ -99,7 +110,9 @@ stage of the Extract, Tranform, Load process.
 
 When arriving at a Data Platform, a client should be able to export data in some 
 serialized format. That format may make implicit assumptions about the data model 
-it is based on.
+it is based on. 
+
+The resulting export format 
 
 ### Import Metadata from a Serialization Format
 
